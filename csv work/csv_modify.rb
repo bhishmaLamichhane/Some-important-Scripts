@@ -3,7 +3,7 @@ hs = %w{created_at total_unit }
 csv_all = []
 final_result = []
 i = 0
-CSV.foreach('/Users/cloudfactory/Downloads/ipsa_result.csv') do |row|
+CSV.foreach('/Users/.../Downloads/ipsa_result.csv') do |row|
     csv_all << row
 end
 csv_all.shift

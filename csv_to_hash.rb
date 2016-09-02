@@ -1,4 +1,4 @@
-data_file = '/Users/cloudfactory/Desktop/aa.csv'
+data_file = '/Users/.../Desktop/aa.csv'
 result = []
 CSV.foreach(data_file, headers: true) do |row|
   result << row.inspect # hash

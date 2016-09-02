@@ -16,7 +16,7 @@ CREATE TABLE voucher (
 
 set session sql_mode = '';
 
-LOAD DATA INFILE '/Users/cloudfactory/Desktop/aa.csv'
+LOAD DATA INFILE '/Users/.../Desktop/aa.csv'
 IGNORE
 INTO TABLE autofill.voucher
 FIELDS TERMINATED BY ','

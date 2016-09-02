@@ -16,7 +16,7 @@ CREATE TABLE voucher_details (
 
 set session sql_mode = '';
 
-LOAD DATA INFILE '/Users/cloudfactory/Desktop/aa.csv'
+LOAD DATA INFILE '/Users/.../Desktop/aa.csv'
 INTO TABLE autofill.voucher_details
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'

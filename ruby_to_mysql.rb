@@ -7,7 +7,7 @@ require 'JSON'
 
 begin
   con = Mysql.new 'localhost', 'root', '', 'autofill'
-  # arr_of_hashes = CSVHasher.hashify('/Users/cloudfactory/Desktop/aa.csv')
+  # arr_of_hashes = CSVHasher.hashify('/Users/.../Desktop/aa.csv')
   # api_url = "http://localhost:3007/products?issuer=a&product=a"
   api_url = "http://localhost:3007/products?issuer=v&product=n"
   response = HTTParty.get(api_url)

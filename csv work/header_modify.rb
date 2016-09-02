@@ -1,6 +1,6 @@
 require 'CSV'
 csv_all = []
-CSV.foreach('/Users/cloudfactory/Documents/Super 13th.csv') do |row|
+CSV.foreach('/Users/.../Documents/Super 13th.csv') do |row|
     csv_all << row
 end
 header = csv_all.shift

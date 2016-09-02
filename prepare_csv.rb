@@ -4,7 +4,7 @@ require 'pry'
 csv_all = []
 final_result = []
 i = 0
-CSV.foreach('/Users/cloudfactory/Documents/field_id_6577092.csv') do |row|
+CSV.foreach('/Users/.../Documents/field_id_6577092.csv') do |row|
     csv_all << row
 end
 csv_all.shift
