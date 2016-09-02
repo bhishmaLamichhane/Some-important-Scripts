@@ -1,0 +1,49 @@
+mysql -u root -p password
+mysql -u root
+
+show databases;
+use db_name;
+show tables;
+describe tbl_mname;
+
+CREATE TABLE voucher (
+	 id int AUTO_INCREMENT,
+	 issuer VARCHAR( 255 ) NOT NULL ,
+	 product VARCHAR( 255 ) NOT NULL UNIQUE,
+	 product_code VARCHAR( 255 ) NOT NULL ,
+	 PRIMARY KEY (id)
+);
+
+set session sql_mode = '';
+
+LOAD DATA INFILE '/Users/cloudfactory/Desktop/aa.csv'
+IGNORE
+INTO TABLE autofill.voucher
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+CREATE DISTINCT INDEX issuer_index
+ON voucher_details ( issuer);
+
+CREATE INDEX issuer_index
+ON voucher_details ( issuer);
+//DROP INDEX issuer_index ON voucher_details
+
+SHOW  INDEX FROM voucher_details;
+
+insert into 'voucher_details' (issuer, product, product_code) values ('hello', 'hello hi', '134');
+
+# CREATE DATABASE mydb;
+# CREATE USER user12@localhost IDENTIFIED BY '34klq*';
+# set password = password(root);
+# USE mydb;
+# GRANT ALL ON mydb.* to user12@localhost;
+# HTTP API plugin installation
+# It’s already included into our MySQL installation:
+# ls -l /usr/local/mysql/lib/plugin/libmyhttp.so
+# But it’s disabled by default, to enable it run
+# INSTALL PLUGIN myhttp SONAME 'libmyhttp.so';
+# mysql> SHOW PLUGINS;
+# curl -v localhost:8080
+# curl --user basic_auth_user:basic_auth_passwd --url http://localhost:3007/issuers?issuer=New

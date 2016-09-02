@@ -1,0 +1,32 @@
+mysql -u root -p password
+mysql -u root
+
+show databases;
+use db_name;
+show tables;
+describe tbl_mname;
+
+CREATE TABLE voucher_details (
+	 id int AUTO_INCREMENT,
+	 issuer VARCHAR( 255 ) NOT NULL ,
+	 product VARCHAR( 255 ) NOT NULL ,
+	 product_code VARCHAR( 255 ) NOT NULL ,
+	 PRIMARY KEY (id)
+);
+
+set session sql_mode = '';
+
+LOAD DATA INFILE '/Users/cloudfactory/Desktop/aa.csv'
+INTO TABLE autofill.voucher_details
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+CREATE DISTINCT INDEX issuer_index
+ON voucher_details ( issuer);
+
+CREATE INDEX issuer_index
+ON voucher_details ( issuer);
+//DROP INDEX issuer_index ON voucher_details
+
+SHOW  INDEX FROM voucher_details;
